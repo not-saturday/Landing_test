@@ -634,15 +634,43 @@ section { position: relative; }
   column-gap: 3rem;
   margin-bottom: 1.75rem;
 }
-@media (min-width: 700px) {
+/* Две колонки только на достаточно широких экранах,
+   чтобы пункт с текстом и фото помещался комфортно */
+@media (min-width: 900px) {
   .filling-list { grid-template-columns: 1fr 1fr; }
 }
 .filling {
   display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 1rem;
-  padding: 1.4rem 0;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 0.9rem 1rem;
+  /* Отступ увеличен вдвое: 1.4rem -> 2.8rem */
+  padding: 2.8rem 0;
   border-top: 1px solid var(--line-strong);
+}
+.filling-text { min-width: 0; }
+.filling-media {
+  width: 104px;
+  height: 104px;
+  border-radius: 14px;
+  overflow: hidden;
+  flex-shrink: 0;
+  background: linear-gradient(135deg, var(--pink-soft), var(--cream-deep));
+  box-shadow: var(--shadow-sm);
+}
+.filling-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+@media (min-width: 640px) {
+  .filling-media { width: 132px; height: 132px; }
+}
+@media (min-width: 900px) {
+  .filling-media { width: 156px; height: 156px; }
+  /* Текст компактнее: не растягивается на всю колонку,
+     заканчивается чуть раньше правого края */
+  .filling-text { max-width: 34ch; }
 }
 .filling-num {
   font-family: var(--font-display);
@@ -1266,44 +1294,68 @@ html.js-ready .reveal.is-visible {
       <ul class="filling-list">
         <li class="filling reveal">
           <span class="filling-num" aria-hidden="true">01</span>
-          <div>
+          <div class="filling-text">
             <h3>Ванильный бисквит с ягодами</h3>
             <p>Нежный ванильный бисквит, сливочный крем и сезонные ягоды.</p>
+          </div>
+          <div class="filling-media">
+            <img src="Cake_pics/nach1.jpg"
+                 alt="Ванильный бисквит с ягодами" loading="lazy" width="1024" height="827" decoding="async">
           </div>
         </li>
         <li class="filling reveal">
           <span class="filling-num" aria-hidden="true">02</span>
-          <div>
+          <div class="filling-text">
             <h3>Шоколадный торт с карамелью</h3>
             <p>Насыщенный шоколадный бисквит с мягкой карамельной прослойкой.</p>
+          </div>
+          <div class="filling-media">
+            <img src="Cake_pics/nach2.jpeg"
+                 alt="Шоколадный торт с карамелью" loading="lazy" width="1136" height="928" decoding="async">
           </div>
         </li>
         <li class="filling reveal">
           <span class="filling-num" aria-hidden="true">03</span>
-          <div>
+          <div class="filling-text">
             <h3>Фисташка и малина</h3>
             <p>Фисташковый крем в сочетании с кислинкой малины.</p>
+          </div>
+          <div class="filling-media">
+            <img src="Cake_pics/nach3.jpeg"
+                 alt="Фисташка и малина" loading="lazy" width="1136" height="928" decoding="async">
           </div>
         </li>
         <li class="filling reveal">
           <span class="filling-num" aria-hidden="true">04</span>
-          <div>
+          <div class="filling-text">
             <h3>Лимонный крем с ягодным конфитюром</h3>
             <p>Свежий лимонный вкус и яркий ягодный акцент.</p>
+          </div>
+          <div class="filling-media">
+            <img src="Cake_pics/nach4.jpeg"
+                 alt="Лимонный крем с ягодным конфитюром" loading="lazy" width="1136" height="928" decoding="async">
           </div>
         </li>
         <li class="filling reveal">
           <span class="filling-num" aria-hidden="true">05</span>
-          <div>
+          <div class="filling-text">
             <h3>Сникерс</h3>
             <p>Насыщенная шоколадная начинка с карамелью и арахисом.</p>
+          </div>
+          <div class="filling-media">
+            <img src="Cake_pics/nach5.jpeg"
+                 alt="Сникерс" loading="lazy" width="1136" height="928" decoding="async">
           </div>
         </li>
         <li class="filling reveal">
           <span class="filling-num" aria-hidden="true">06</span>
-          <div>
+          <div class="filling-text">
             <h3>Клубника-банан</h3>
             <p>Нежное сочетание клубники и банана в сливочном креме.</p>
+          </div>
+          <div class="filling-media">
+            <img src="Cake_pics/nach6.png"
+                 alt="Клубника-банан" loading="lazy" width="1388" height="1133" decoding="async">
           </div>
         </li>
       </ul>
