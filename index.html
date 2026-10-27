@@ -88,7 +88,7 @@ h1, h2, h3, h4, p { margin: 0; }
   display: inline-flex;
   align-items: center;
   gap: 0.6rem;
-  font-size: 0.72rem;
+  font-size: calc(0.72rem + 4pt);
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--caramel-deep);
@@ -109,12 +109,12 @@ h1, h2 {
   letter-spacing: -0.01em;
   line-height: 1.06;
 }
-h1 { font-size: clamp(2.3rem, 6.2vw, 4.2rem); }
-h2 { font-size: clamp(1.85rem, 3.6vw, 2.8rem); line-height: 1.1; }
-h3 { font-size: 1.05rem; font-weight: 600; }
+h1 { font-size: clamp(calc(2.3rem + 4pt), calc(6.2vw + 4pt), calc(4.2rem + 4pt)); }
+h2 { font-size: clamp(calc(1.85rem + 4pt), calc(3.6vw + 4pt), calc(2.8rem + 4pt)); line-height: 1.1; }
+h3 { font-size: calc(1.05rem + 4pt); font-weight: 600; }
 
 .lead {
-  font-size: clamp(1rem, 1.4vw, 1.12rem);
+  font-size: clamp(calc(1rem + 4pt), calc(1.4vw + 4pt), calc(1.12rem + 4pt));
   color: var(--brown-soft);
   max-width: 34rem;
 }
@@ -365,7 +365,7 @@ section { position: relative; }
   display: flex;
   align-items: center;
   gap: 0.6rem;
-  font-size: 0.86rem;
+  font-size: calc(0.86rem + 4pt);
   color: var(--brown-soft);
 }
 .hero-note svg { flex-shrink: 0; color: var(--caramel); }
@@ -410,7 +410,7 @@ section { position: relative; }
   background: var(--cream);
   border-radius: 14px;
   box-shadow: var(--shadow-md);
-  font-size: 0.82rem;
+  font-size: calc(0.82rem + 4pt);
   font-weight: 500;
   line-height: 1.3;
   max-width: calc(100% - 2.2rem);
@@ -457,12 +457,12 @@ section { position: relative; }
 }
 .benefit h3 {
   font-family: var(--font-display);
-  font-size: 1.2rem;
+  font-size: calc(1.2rem + 4pt);
   font-weight: 600;
   line-height: 1.2;
 }
 .benefit p {
-  font-size: 0.88rem;
+  font-size: calc(0.88rem + 4pt);
   color: var(--brown-soft);
   line-height: 1.5;
 }
@@ -475,7 +475,7 @@ section { position: relative; }
   margin-bottom: clamp(1.75rem, 4vw, 2.75rem);
 }
 .section-head h2 { max-width: 22ch; }
-.section-head p { color: var(--brown-soft); max-width: 32rem; }
+.section-head p { font-size: calc(1rem + 4pt); color: var(--brown-soft); max-width: 32rem; }
 @media (min-width: 800px) {
   .section-head {
     flex-direction: row;
@@ -547,7 +547,7 @@ section { position: relative; }
 .gallery-item:hover { transform: translateY(-3px); }
 .gallery-caption { padding-top: 0.7rem; }
 .gallery-cat {
-  font-size: 0.64rem;
+  font-size: calc(0.64rem + 4pt);
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--caramel-deep);
@@ -556,7 +556,7 @@ section { position: relative; }
 }
 .gallery-caption h3 {
   font-family: var(--font-display);
-  font-size: 1.15rem;
+  font-size: calc(1.15rem + 4pt);
   font-weight: 600;
   line-height: 1.22;
 }
@@ -603,6 +603,7 @@ section { position: relative; }
 }
 .about-copy h2 { margin-bottom: 1.1rem; max-width: 20ch; }
 .about-copy p {
+  font-size: calc(1rem + 4pt);
   color: var(--brown-soft);
   margin-bottom: 1rem;
   max-width: 34rem;
@@ -653,17 +654,17 @@ section { position: relative; }
 }
 .filling h3 {
   font-family: var(--font-display);
-  font-size: 1.3rem;
+  font-size: calc(1.3rem + 4pt);
   font-weight: 600;
   margin-bottom: 0.25rem;
 }
 .filling p {
-  font-size: 0.9rem;
+  font-size: calc(0.9rem + 4pt);
   color: var(--brown-soft);
   line-height: 1.5;
 }
 .fillings-note {
-  font-size: 0.88rem;
+  font-size: calc(0.88rem + 4pt);
   color: var(--brown-soft);
   max-width: 60ch;
   padding: 1rem 1.1rem;
@@ -706,13 +707,13 @@ section { position: relative; }
 }
 .step h3 {
   font-family: var(--font-display);
-  font-size: 1.25rem;
+  font-size: calc(1.25rem + 4pt);
   font-weight: 600;
   margin-bottom: 0.4rem;
   line-height: 1.25;
 }
 .step p {
-  font-size: 0.9rem;
+  font-size: calc(0.9rem + 4pt);
   color: var(--brown-soft);
   line-height: 1.5;
 }
@@ -721,8 +722,8 @@ section { position: relative; }
 .reviews {
   padding: clamp(3.5rem, 8vw, 6rem) 0;
 }
-.review-note {
-  font-size: 0.85rem;
+.section-head p.review-note {
+  font-size: calc(0.85rem + 4pt);
   color: var(--brown-soft);
   background: var(--cream-soft);
   padding: 0.9rem 1.1rem;
@@ -778,7 +779,7 @@ section { position: relative; }
   margin-bottom: 2rem;
 }
 .order-head h2 { margin-bottom: 0.85rem; max-width: 18ch; }
-.order-head p { color: var(--brown-soft); }
+.order-head p { font-size: calc(1rem + 4pt); color: var(--brown-soft); }
 .order-card {
   background: var(--white);
   border: 1px solid var(--line);
@@ -890,7 +891,7 @@ section { position: relative; }
 }
 .form-result h3 {
   font-family: var(--font-display);
-  font-size: 1.35rem;
+  font-size: calc(1.35rem + 4pt);
   margin-bottom: 0.5rem;
 }
 .form-result p { color: var(--brown-soft); font-size: 0.92rem; margin-bottom: 1rem; }
